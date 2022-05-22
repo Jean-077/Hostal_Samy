@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\ContactanosController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,10 +16,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
 });
 
 Route::resource('recepcionista','App\Http\Controllers\RecepcionistaController');
+
+//conectores de gmail
+Route::get('contactanos', [ContactanosController::class, 'index'])->name('contactanos.index');
+Route::post('contactanos', [ContactanosController::class, 'store'])->name('contactanos.store');
 
 Route::middleware([
     'auth:sanctum',

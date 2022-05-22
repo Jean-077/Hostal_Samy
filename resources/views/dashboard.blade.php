@@ -3,6 +3,11 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Dashboard') }}
         </h2>
+        <ul>
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                <a href="{{route('contactanos.index')}}" class="{{request()->routeIs('contactanos.index') ? 'active' : ''}}">{{ __('Contactanos') }}</a>
+            </h2>
+        </ul>
     </x-slot>
 
     <div class="py-12">
